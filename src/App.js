@@ -8,9 +8,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/success" element={<Success />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/react-host" element={<Login />} />
+        <Route path="/react-host/success" element={<Success />} />
+        <Route path="/react-host/admin" element={<Admin />} />
       </Routes>
     </Router>
   );
