@@ -1,0 +1,11 @@
+.bigContainer {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}

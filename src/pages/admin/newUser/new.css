@@ -1,0 +1,31 @@
+.Username {
+  margin-bottom: 10px;
+  color: black;
+}
+
+.Email {
+  margin-bottom: 10px;
+  color: black;
+}
+
+.Password {
+  margin-bottom: 10px;
+  color: black;
+}
+
+.createUserBtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.createUserBtn:hover {
+  background-color: #45a049;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}

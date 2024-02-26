@@ -2,17 +2,10 @@
   user-select: none;
   color: white;
   font-size: 2vw;
+  box-sizing: border-box;
 }
 
-::-ms-reveal {
-  filter: invert(100%);
-}
-
-.App {
-  text-align: center;
-}
-
-.App-header {
+body {
   background-color: gray;
   min-height: 100vh;
   display: flex;
@@ -26,7 +19,7 @@
   padding: 2vh;
   border-radius: 5%;
   width: 30vh;
-  height: 46vh;
+  height: 40vh;
 }
 
 .loginDivider {
@@ -37,12 +30,16 @@
  user-select: all; 
 }
 
+.loginInput::-ms-reveal {
+  filter: invert(100%);
+}
+
 .loginMessage {
   height: 3vh!important;
-  padding: 0!important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 0rem!important;
+  display: flex!important;
+  justify-content: center!important;
+  align-items: center!important;
 }
 
 .signOutBtn {
@@ -58,4 +55,9 @@
   cursor: pointer;
   border-radius: 5%;
   cursor: pointer;
+}
+
+.testacc {
+  position: absolute;
+  left: 0;
 }
