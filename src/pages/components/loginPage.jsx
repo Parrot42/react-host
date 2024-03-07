@@ -1,7 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import { Auth } from '@supabase/auth-ui-react';
 import { ThemeSupa } from '@supabase/auth-ui-shared';
-import { useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 
 
@@ -11,32 +10,6 @@ const supabase = createClient(
 )
 
 function Login() {
-  const navigate = useNavigate();
-  const [user, setUser] = useState({});
-  const errormessage = document.querySelector('.loginMessage');
-
-
-    supabase.auth.onAuthStateChange(async (event) => {
-        if (event === 'SIGNED_IN') {
-                        async function getUserData() {
-                await supabase.auth.getUser().then((value) => {
-                    if(value.data?.user) {
-                        setUser(value.data.user);
-                        console.log(value.data.user);
-                        if(value.data.user.user_metadata.admin_key === undefined) {
-                            navigate('/success');
-                        } else {
-                            navigate('/admin');
-                        }
-                    }
-                });
-            }
-            getUserData();
-        } else if (event === 'SIGNED_OUT') {
-            navigate('/');
-        }
-    }
-    );
 
 
 
@@ -81,8 +54,7 @@ useEffect(() => {
 
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <>
         <div className='testacc'>
             <p>Normaler Account: user@test.com</p>
             <p>Admin Account: admin@test.com</p>
@@ -132,9 +104,7 @@ useEffect(() => {
 
             />
         </div>
-
-      </header>
-    </div>
+      </>
   );
 
 

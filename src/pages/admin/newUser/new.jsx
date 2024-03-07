@@ -11,6 +11,7 @@ function New(props) {
     const { data, error } = await props.supabase.auth.admin.createUser({
         email: document.getElementById('email').value,
         password: document.getElementById('password').value,
+        email_confirm: true,
         user_metadata: { 
           display_name: document.getElementById('surname').value, 
           name: document.getElementById('name').value,
@@ -21,12 +22,12 @@ function New(props) {
     } else {
         alert('Benutzer konnte erstellt werden!')
         console.log('User created:', data)
-        const { data2, error2 } = await props.supabase.auth.admin.inviteUserByEmail(document.getElementById('email').value)
-        if (error2) {
-            console.log('Error inviting user:', error2.message)
-        } else {
-            console.log('User invited:', data2)
-        }
+        // const { data2, error2 } = await props.supabase.auth.admin.inviteUserByEmail(document.getElementById('email').value)
+        // if (error2) {
+        //     console.log('Error inviting user:', error2.message)
+        // } else {
+        //     console.log('User invited:', data2)
+        // }
     }
   }
 

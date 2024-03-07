@@ -1,10 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
-import Main from './mainPage';
+import Main from './mainPage/mainPage';
 import { createClient } from '@supabase/supabase-js';
 import React, { useEffect, useState } from 'react';
-import Navbar from './nav/navbar';
+import Navbar from '../components/nav/navbar';
 import New from './newUser/new';
-import './app.css';
+import UserList from './userList/user';
+
 
 let supabase = createClient(
     'https://kzhiwdgwtormdlysnkja.supabase.co',
@@ -15,6 +16,7 @@ function Admin() {
     const [isAdmin, setIsAdmin] = useState(false);
     const [user, setUser] = useState({});
     const [supabaseAdmin, setSupabaseAdmin] = useState({});
+
 
     useEffect(() => {
             async function getUserData() {
@@ -57,24 +59,24 @@ function Admin() {
 
 
     return (
-<>                {isAdmin === true ?
+        <>          
+            {isAdmin ?
                 <> 
-                    <Navbar />
+                    <Navbar home={['Home', '/admin']} links={[['Neuer Benutzer', '/admin/new'], ['Benutzerliste', '/admin/user'], ['Gürkchen', '/admin/gurke']]}/>
                     <div className='bigContainer'>
                         <Routes>
                             <Route path="/" element={<Main user={user} signOut={signOut}/>} />
                             <Route path="/new" element={<New supabase={supabaseAdmin}/>} />
-                            <Route path='/tomate' element={<h1>Tomate</h1>} />
+                            <Route path='/user' element={<UserList supabase={supabaseAdmin}/>} />
                             <Route path='/gurke' element={<h1>Gurke</h1>} />
                         </Routes>
                     </div>
                 </>
                 :
                 <>
-                    <h1>Es ist kein Benutzer mit Adminrechten angemeldet</h1>
-                    <button onClick={signOut}>Zurück zum Login</button>
+                    
                 </>
-                }
+            }
 </>
 
     );

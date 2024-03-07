@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from 'react';
 import { NavLink, useMatch, useResolvedPath } from 'react-router-dom';
 import './navbar.css';
 
-function Navbar() {
+function Navbar(props) {
 
     return <nav className='nav'>
-        <NavLink to="/admin" className='home-link link'>Home</NavLink>
+        <NavLink to={props.home[1]} className='home-link link'>{props.home[0]}</NavLink>
         <ul>
-            <CustomLink to='/admin/new'>Neuer Benutzer</CustomLink>
-            <CustomLink to='/admin/tomate'>Tomate</CustomLink>
-            <CustomLink to='/admin/gurke'>Gurke</CustomLink>    
+            {/* <CustomLink to='/admin/new'>Neuer Benutzer</CustomLink>
+            <CustomLink to='/admin/user'>Benutzerliste</CustomLink>
+            <CustomLink to='/admin/gurke'>Gurke</CustomLink>     */}
+            {props.links.map((link) => {
+                return <CustomLink to={link[1]}>{link[0]}</CustomLink>
+            })}
         </ul>
     </nav>
 
