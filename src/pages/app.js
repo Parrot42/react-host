@@ -9,11 +9,9 @@ import './app.css';
 import Login from './components/loginPage';
 
 const supabase = createClient(
-    'https://kzhiwdgwtormdlysnkja.supabase.co',
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt6aGl3ZGd3dG9ybWRseXNua2phIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDgwMDYxNDQsImV4cCI6MjAyMzU4MjE0NH0.cZcJoq_06f7ynmyTqsFC8dA9judjjQonQyieLxfVvnY'
+    'https://vhzvxyrhlteqlktklgan.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZoenZ4eXJobHRlcWxrdGtsZ2FuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxMDEwMjIsImV4cCI6MjA1ODY3NzAyMn0.I0CtuRDg644nO6reKi9ys02obAaSELfURSw_9lgO2AY'
 )
-
-
 
 function App() {
     const [user, setUser] = useState({});
