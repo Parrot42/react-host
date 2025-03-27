@@ -9,7 +9,27 @@ const supabase = createClient(
 
 
 function Main(props) {
-    const [user, setUser] = useState({});
+    
+    async function createTable() {
+
+        let { data, error } = await supabase
+        .rpc('add_table', {
+            name: 'til' 
+        })
+      if (error) console.error(error)
+      else console.log(data)
+      
+      }
+    
+      async function delTable() {
+    
+        let { data, error } = await supabase
+        .rpc('del_table', {
+            name: 'testtil'
+        })
+      if (error) console.error(error)
+      else console.log(data)
+      }
 
     return (
         
@@ -17,6 +37,8 @@ function Main(props) {
             <h1>Success!</h1>
             <p>Welcome {props.user.user_metadata.display_name}!</p>
             <button className="signOutBtn" onClick={props.signOut}>Sign Out</button>
+            <button onClick={createTable}>Create Test Table</button>
+            <button onClick={delTable}>Delete Test Table</button>
         </>
     );
 }

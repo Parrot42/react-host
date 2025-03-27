@@ -12,7 +12,6 @@ const supabase = createClient(
 function Login() {
 
 
-
     //  Supabase Auth Error Message Translation
 useEffect(() => {
   const observer = new MutationObserver((mutations) => {

@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import Main from './mainPage';
+import Main from '../singedIn/mainPage';
 import { createClient } from '@supabase/supabase-js';
 import React, { useEffect, useState } from 'react';
 import Navbar from './components/nav/navbar';
@@ -62,7 +62,7 @@ function App() {
                         <Routes>
                             <Route path="/" element={<Main signOut={signOut} user={user}/>} />
                             <Route path="/sulz" element={<h1>Sulz</h1>} />
-                            <Route path="/new" element={<NewQuiz user={user} />} />
+                            <Route path="/new" element={<NewQuiz supabase={supabase} user={user} />} />
                         </Routes>
                     </div>
                 </>
