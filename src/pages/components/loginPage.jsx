@@ -5,9 +5,8 @@ import React, { useState, useEffect } from 'react';
 
 
 const supabase = createClient(
-    'https://kzhiwdgwtormdlysnkja.supabase.co',
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt6aGl3ZGd3dG9ybWRseXNua2phIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDgwMDYxNDQsImV4cCI6MjAyMzU4MjE0NH0.cZcJoq_06f7ynmyTqsFC8dA9judjjQonQyieLxfVvnY'
-)
+    'https://vhzvxyrhlteqlktklgan.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZoenZ4eXJobHRlcWxrdGtsZ2FuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxMDEwMjIsImV4cCI6MjA1ODY3NzAyMn0.I0CtuRDg644nO6reKi9ys02obAaSELfURSw_9lgO2AY')
 
 function Login() {
 
@@ -58,6 +57,20 @@ useEffect(() => {
             <p>Normaler Account: user@test.com</p>
             <p>Admin Account: admin@test.com</p>
             <p>Passwort für beide: PW</p>
+            {/* <button onClick={async () => {
+                const { data, error } = await createClient(
+    'https://vhzvxyrhlteqlktklgan.supabase.co',
+    '/*admin key*//*').auth.admin.createUser({
+                  email: "admin@test.com",
+                  password: "PW",
+                  email_confirm: true,
+                  user_metadata: { 
+                    display_name: "Anton", 
+                    name: "Holzkopf",
+                    //admin_key: ''
+                  } 
+
+                })}}>Test Account erstellen</button> */}
         </div>
         <div className="loginBox">
             <Auth 
