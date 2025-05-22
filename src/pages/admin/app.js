@@ -52,7 +52,7 @@ function Admin() {
         if (error) {
             console.log('Error logging out:', error.message);
         } else {
-            window.location.href = '/React-Auth/';
+            window.location.href = '/react-host/';
         }
     }
 
