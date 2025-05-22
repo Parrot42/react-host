@@ -13,6 +13,6 @@ https://parrot42.github.io/React-Auth/
 ## Build:
 
 ### `npm run build`
-### `npm run eject`
+### `npm run deploy`
 
 
