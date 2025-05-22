@@ -13,6 +13,6 @@ https://parrot42.github.io/react-host/
 ## Build:
 
 ### `npm run build`
-### `npm run eject`
+### `npm run deploy`
 
 
