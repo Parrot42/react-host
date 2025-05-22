@@ -1,5 +1,5 @@
 # GH-Pages:
-https://parrot42.github.io/react-auth/
+https://parrot42.github.io/React-Auth/
 
 
 
